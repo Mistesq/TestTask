@@ -9,6 +9,7 @@ var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
 var csso = require('gulp-csso');
 var imagemin = require('gulp-imagemin');
+var posthtml = require('gulp-posthtml');
 var del = require('del');
 
 gulp.task('style', function () {
@@ -25,8 +26,6 @@ gulp.task('style', function () {
     .pipe(gulp.dest('build/css'));
 });
 
-
-
 gulp.task('serve', function() {
    server.init({
       server: "build/",
@@ -36,8 +35,24 @@ gulp.task('serve', function() {
       ui: false
     });
 
-  gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("style"));
+  gulp.watch("source/sass/*.{scss,sass}", gulp.series("style", "refresh"));
+  gulp.watch("source/*.html", gulp.series("posthtml", "refresh"));
 });
+
+
+gulp.task("refresh", function(done) {
+  server.reload();
+  done();
+});
+
+
+gulp.task("posthtml", function() {
+  return gulp.src("source/*.html")
+  .pipe(posthtml([
+  ]))
+  .pipe(gulp.dest("build"));
+});
+
 
 gulp.task("images", function () {
   return gulp.src("source/img/*")
@@ -64,5 +79,5 @@ gulp.task("clean", function() {
 });
 
 
-gulp.task("build", gulp.series("clean", "copy", "style"));
+gulp.task("build", gulp.series("clean", "copy", "style", "posthtml"));
 gulp.task("start", gulp.series("build", "serve"));

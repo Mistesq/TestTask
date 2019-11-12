@@ -1,0 +1,14 @@
+.advantages-list {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.advantages-list__item {
+  font-size: 14px;
+  line-height: 18px;
+  font-style: italic;
+  color: $black;
+}

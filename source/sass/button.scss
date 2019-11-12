@@ -1,0 +1,37 @@
+.button {
+  display: inline-block;
+  padding: 5px 25px;
+  vertical-align: middle;
+  box-sizing: border-box;
+
+  font-size: 13px;
+  line-height: 22px;
+  font-family: "Tahoma", serif;
+  text-align: center;
+  color: $white;
+
+  background: $red;
+  border-radius: 3px;
+  transition: all 0.07s linear;
+  cursor: pointer;
+
+
+  &:hover {
+    background-color: $gray;
+    color: $white;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &--action {
+    background-color: $light-red;
+    border: none;
+    color: $white;
+
+    &:hover {
+      background-color: $light-red;
+    }
+  }
+}

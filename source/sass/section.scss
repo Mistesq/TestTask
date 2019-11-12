@@ -1,0 +1,18 @@
+.section {
+  margin-bottom: 35px;
+}
+
+.section__title {
+  margin: 0;
+  margin-bottom: 10px;
+
+  font-size: 18px;
+  line-height: 19px;
+  font-family: "Tahoma", serif;
+  font-weight: bold;
+  color: $black;
+}
+
+.section__text {
+  font-style: italic;
+}
