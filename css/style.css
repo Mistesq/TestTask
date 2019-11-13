@@ -1,6 +1,6 @@
 .button {
   display: inline-block;
-  padding: 5px 25px;
+  padding: 5px 26px;
   vertical-align: middle;
   box-sizing: border-box;
   font-size: 13px;
@@ -8,14 +8,15 @@
   font-family: "Tahoma", serif;
   text-align: center;
   color: #ffffff;
-  background: #da4137;
+  background-color: #da4137;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#da4137), to(rgba(0, 0, 0, 0.3)));
+  background-image: linear-gradient(#da4137, rgba(0, 0, 0, 0.3));
   border-radius: 3px;
   -webkit-transition: all 0.07s linear;
   transition: all 0.07s linear;
   cursor: pointer; }
   .button:hover {
-    background-color: #8d8d8d;
-    color: #ffffff; }
+    background-color: #8d8d8d; }
   .button:active {
     color: rgba(255, 255, 255, 0.3); }
   .button--action {
@@ -119,7 +120,8 @@ h2 {
   color: #000000; }
 
 .section__text {
-  font-style: italic; }
+  margin: 0;
+  margin-bottom: 25px; }
 
 .preview {
   padding: 20px 30px;
@@ -145,7 +147,8 @@ h2 {
           align-items: stretch; }
 
 .preview__left img {
-  width: 100%; }
+  width: 100%;
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.25); }
 
 .preview__right {
   width: 48%; }
@@ -154,13 +157,52 @@ h2 {
   list-style: none;
   padding: 0;
   margin: 0;
+  padding-bottom: 10px;
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
-  width: 100%; }
-
-.advantages-list__item {
+  width: 100%;
+  justify-content: space-around;
   font-size: 14px;
   line-height: 18px;
   font-style: italic;
   color: #000000; }
+
+.advantages-list__item {
+  position: relative; }
+  .advantages-list__item--visitor::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -55px;
+    width: 44px;
+    height: 38px;
+    background-image: url("../img/icon-visitor.png");
+    background-repeat: no-repeat; }
+  .advantages-list__item--cart::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -60px;
+    width: 45px;
+    height: 44px;
+    background-image: url("../img/icon-cart.png");
+    background-repeat: no-repeat; }
+  .advantages-list__item--calculator::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -55px;
+    width: 37px;
+    height: 44px;
+    background-image: url("../img/icon-calculator.png");
+    background-repeat: no-repeat; }
+  .advantages-list__item--briefcase::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -60px;
+    width: 45px;
+    height: 36px;
+    background-image: url("../img/icon-briefcase.png");
+    background-repeat: no-repeat; }
