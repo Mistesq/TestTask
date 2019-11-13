@@ -1,14 +1,83 @@
 .advantages-list {
   @include reset-list;
 
+  padding-bottom: 10px;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-}
+  justify-content: space-around;
 
-.advantages-list__item {
   font-size: 14px;
   line-height: 18px;
   font-style: italic;
   color: $black;
+}
+
+
+.advantages-list__item {
+  position: relative;
+
+  &--visitor {
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -55px;
+
+      width: 44px;
+      height: 38px;
+
+      background-image: url("../img/icon-visitor.png");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--cart {
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -7px;
+      left: -60px;
+
+      width: 45px;
+      height: 44px;
+
+      background-image: url("../img/icon-cart.png");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--calculator {
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -7px;
+      left: -55px;
+
+      width: 37px;
+      height: 44px;
+
+      background-image: url("../img/icon-calculator.png");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--briefcase {
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -60px;
+
+      width: 45px;
+      height: 36px;
+
+      background-image: url("../img/icon-briefcase.png");
+      background-repeat: no-repeat;
+    }
+  }
 }

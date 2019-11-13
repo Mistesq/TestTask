@@ -1,6 +1,6 @@
 .button {
   display: inline-block;
-  padding: 5px 25px;
+  padding: 5px 26px;
   vertical-align: middle;
   box-sizing: border-box;
 
@@ -10,7 +10,8 @@
   text-align: center;
   color: $white;
 
-  background: $red;
+  background-color: $red;
+  background-image: linear-gradient($red, rgba(0, 0, 0, 0.3));
   border-radius: 3px;
   transition: all 0.07s linear;
   cursor: pointer;
@@ -18,7 +19,6 @@
 
   &:hover {
     background-color: $gray;
-    color: $white;
   }
 
   &:active {

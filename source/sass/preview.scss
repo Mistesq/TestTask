@@ -17,13 +17,13 @@
 
 .preview__left {
   width: 48%;
-  
   display: flex;
   align-items: stretch;
 }
 
 .preview__left img {
   width: 100%;
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, .25);
 }
 
 .preview__right {
